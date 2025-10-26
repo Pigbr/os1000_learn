@@ -6,7 +6,7 @@ QEMU=qemu-system-riscv32
 
 # Start QEMU
 $QEMU -machine virt \
-      -bios /home/kevin/Desktop/os1000/openSBI/opensbi-riscv32-generic-fw_dynamic.bin \
+      -bios openSBI/opensbi-riscv32-generic-fw_dynamic.bin \
       -nographic \
       -serial mon:stdio \
       --no-reboot
