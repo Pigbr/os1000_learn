@@ -2,6 +2,7 @@ typedef unsigned char uint8_t;
 typedef unsigned int uint32_t;
 typedef uint32_t size_t;
 #include "kernel.h"
+#include "common.h"
 
 extern char __bss[], __bss_end[], __stack_top[];
 
@@ -41,13 +42,14 @@ void putchar(char ch) {
 // kernel
 void kernel_main(void) {
 
-    const char *s = "\n\nwelcome to my_RISC-V OS\n";
-
+    printf("---------boot and kernel main start-------------\n");
+    // Clear the BSS segment
     memset(__bss, 0, (size_t) __bss_end - (size_t) __bss);
+    printf("clear bss done\n");
 
-    while (*s) {
-        putchar(*s++);
-    }
+    printf("-------------------myRISC-V OS-------------------\n\n");
+
+
 
     for (;;)
     {
