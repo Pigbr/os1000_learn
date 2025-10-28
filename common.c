@@ -39,6 +39,7 @@ int strcmp(const char *s1, const char *s2) {
     return *(unsigned char *)s1 - *(unsigned char *)s2;
 }
 
+// 格式化輸出
 void printf(const char *fmt, ...) {
     va_list vargs;
     va_start(vargs, fmt);
